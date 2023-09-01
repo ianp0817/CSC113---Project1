@@ -13,5 +13,5 @@ NC = readmatrix("NC_Health_2023.xlsx");
 WA = readmatrix("WA_Health_2023.xlsx");
 
 %% Switch Case
-% hard-coded for now, will fix later
+
 state = MS
