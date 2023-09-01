@@ -44,8 +44,9 @@ maxGraduation = max(state(:,8));
 
 % calculating correlation coefficients between reported rates
 PH_CP = corrcoef(state(:,3), state(:,11));PH_CP = PH_CP(1,2);
-SC_CP = corrcoef(state(:,10), state(:,11));SC_CP = SC_CP(1,2);
+SC_CP = corrcoef(state(:,9), state(:,11));SC_CP = SC_CP(1,2);
 UI_CP = corrcoef(state(:,7), state(:,11));UI_CP = UI_CP(1,2);
+AS_CP = corrcoef(state(:,4), state(:,11));AS_CP = AS_CP(1,2);
 
 %% Display module
 
@@ -67,3 +68,30 @@ disp(" Poor Health and Children Poverty (PH-CP):   "+PH_CP)
 disp("Some College and Children Poverty (SC-CP):   "+SC_CP)
 disp("   Uninsured and Children Poverty (UI-CP):   "+UI_CP)
 disp("******************************************************")
+
+%% Plotting
+
+% Plots adult smokers rate vs. children in poverty rate
+
+nexttile
+plot(state(:,4),state(:,11),"blue *")
+xlabel("Adult Smokers Rate")
+ylabel("Children in Poverty Rate")
+
+nexttile
+plot(state(:,9),state(:,11),"red diamond")
+xlabel("Some College Rate")
+ylabel("Children in Poverty Rate")
+
+nexttile
+plot(state(:,7),state(:,11),"magenta o")
+xlabel("Uninsured Rate")
+ylabel("Children in Poverty Rate")
+
+nexttile
+hold on
+bar(1,AS_CP, "blue")
+bar(2,SC_CP, "red")
+bar(3,UI_CP, "magenta")
+title("Correlations")
+legend("Adult Smoker", "Some College", "Uninsured")
