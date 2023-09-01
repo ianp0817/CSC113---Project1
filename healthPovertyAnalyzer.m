@@ -15,21 +15,36 @@ WA = readmatrix("WA_Health_2023.xlsx");
 
 %% Switch Case
 % hard-coded for now, will fix later
-state = MS
+state = MS;
 
 %% 2.3: Analyzing the Data and Printing
 % A: Calculate the Poor Health/Unemployment/HS Graduation rate
 % for the selected state:
 
-avgPoorHealth =
-minHealth = 
-maxHealth =
+% average, min, and max for poor health
+avgPoorHealth = mean(state(:,3));
+minPoorHealth = min(state(:,3));
+maxPoorHealth = max(state(:,3));
 
-avgUnemployment =
-minUnemployment =
-maxUnemployment =
+% average, min, and max for Unemployment
+avgUnemployment = mean(state(:,10));
+minUnemployment = min(state(:,10));
+maxUnemployment = max(state(:,10));
 
-avgGraduation =
-minGraduation =
-maxGraduation = 
->>>>>>> 666201b825cfe87271cbc2bac73547087fcc0632
+% average, min, and max for Graduation
+avgGraduation = mean(state(:,8));
+minGraduation = min(state(:,8));
+maxGraduation = max(state(:,8));
+
+% calculating correlation coefficients between reported rates
+PH_CP = corrcoef(state(:,3), state(:,11));PH_CP = PH_CP(1,2);
+SC_CP = corrcoef(state(:,10), state(:,11));SC_CP = SC_CP(1,2);
+UI_CP = corrcoef(state(:,7), state(:,11));UI_CP = UI_CP(1,2);
+
+%% Display module
+
+
+disp("        Statistics:")
+disp("  Poor Health Rate:   "+avgPoorHealth+",  " + minPoorHealth)
+disp(" Unemployment Rate:   ")
+disp("HS Graduation Rate:   ")
