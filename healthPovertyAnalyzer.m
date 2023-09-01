@@ -72,22 +72,24 @@ disp("******************************************************")
 %% Plotting
 
 % Plots adult smokers rate vs. children in poverty rate
-
 nexttile
 plot(state(:,4),state(:,11),"blue *")
 xlabel("Adult Smokers Rate")
 ylabel("Children in Poverty Rate")
 
+% Plots some college rate vs. children in poverty rate
 nexttile
 plot(state(:,9),state(:,11),"red diamond")
 xlabel("Some College Rate")
 ylabel("Children in Poverty Rate")
 
+% Plots some uninsured rate vs. children in poverty rate
 nexttile
 plot(state(:,7),state(:,11),"magenta o")
 xlabel("Uninsured Rate")
 ylabel("Children in Poverty Rate")
 
+% Plots some college vs. children in poverty vs. uninsured correlation
 nexttile
 hold on
 bar(1,AS_CP, "blue")
