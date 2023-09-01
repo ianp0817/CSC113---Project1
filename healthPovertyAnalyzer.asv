@@ -43,5 +43,11 @@ UI_CP = corrcoef(state(:,7), state(:,11));UI_CP = UI_CP(1,2);
 
 %% Display module
 
-disp()
 
+disp("        Statistics:    Avg,    Min,  Max   ")
+disp("********************************************")
+disp("  Poor Health Rate:   "+avgPoorHealth+",  " +minPoorHealth+",  " +maxPoorHealth)
+disp(" Unemployment Rate:   "+avgUnemployment+",  " +minUnemployment+",  " +maxUnemployment)
+disp("HS Graduation Rate:   "+avgGraduation+",  " +minGraduation+",  " +maxGraduation)
+disp("********************************************")
+disp(" Calcul"

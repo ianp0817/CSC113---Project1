@@ -44,7 +44,20 @@ UI_CP = corrcoef(state(:,7), state(:,11));UI_CP = UI_CP(1,2);
 %% Display module
 
 
-disp("        Statistics:")
-disp("  Poor Health Rate:   "+avgPoorHealth+",  " + minPoorHealth)
-disp(" Unemployment Rate:   ")
-disp("HS Graduation Rate:   ")
+disp("        Statistics:    Avg,    Min,  Max   ")
+disp("******************************************************")
+
+% Displays poor health rate, unemployment rate, and HS graduation rate
+% statistics
+disp("  Poor Health Rate:   "+avgPoorHealth+",  " +minPoorHealth+",  " +maxPoorHealth)
+disp(" Unemployment Rate:   "+avgUnemployment+",  " +minUnemployment+",  " +maxUnemployment)
+disp("HS Graduation Rate:   "+avgGraduation+",  " +minGraduation+",  " +maxGraduation)
+disp("******************************************************")
+
+% Displays calculated correlations between poor health, some college,
+% uninsured, and children poverty
+disp("Calculated Correlations:")
+disp(" Poor Health and Children Poverty (PH-CP):   "+PH_CP)
+disp("Some College and Children Poverty (SC-CP):   "+SC_CP)
+disp("   Uninsured and Children Poverty (UI-CP):   "+UI_CP)
+disp("******************************************************")
