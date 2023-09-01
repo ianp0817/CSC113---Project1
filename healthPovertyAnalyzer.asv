@@ -9,14 +9,3 @@ clc ; clear ; close('all');
 % A: Calculate the Poor Health/Unemployment/HS Graduation rate
 % for the selected state:
 
-avgPoorHealth =
-minHealth = 
-maxHealth =
-
-avgUnemployment =
-minUnemployment =
-maxUnemployment =
-
-avgGraduation =
-minGraduation =
-maxGraduation = 
