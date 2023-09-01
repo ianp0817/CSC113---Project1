@@ -14,8 +14,13 @@ NC = readmatrix("NC_Health_2023.xlsx");
 WA = readmatrix("WA_Health_2023.xlsx");
 
 %% Switch Case
-% hard-coded for now, will fix later
-state = MS;
+
+% Prints user options
+disp("Pick a State to Analyze:")
+disp("(MS) Mississippi"+newline+"(NC) North Carolina"+newline+"(WA) Washington"+newline)
+
+% Grab user input and sets it as the state
+state = input("Selection: ");
 
 %% 2.3: Analyzing the Data and Printing
 % A: Calculate the Poor Health/Unemployment/HS Graduation rate
@@ -43,11 +48,21 @@ UI_CP = corrcoef(state(:,7), state(:,11));UI_CP = UI_CP(1,2);
 
 %% Display module
 
-
+disp(newline)
 disp("        Statistics:    Avg,    Min,  Max   ")
-disp("********************************************")
+disp("******************************************************")
+
+% Displays poor health rate, unemployment rate, and HS graduation rate
+% statistics
 disp("  Poor Health Rate:   "+avgPoorHealth+",  " +minPoorHealth+",  " +maxPoorHealth)
 disp(" Unemployment Rate:   "+avgUnemployment+",  " +minUnemployment+",  " +maxUnemployment)
 disp("HS Graduation Rate:   "+avgGraduation+",  " +minGraduation+",  " +maxGraduation)
-disp("********************************************")
-disp(" Calcul"
+disp("******************************************************")
+
+% Displays calculated correlations between poor health, some college,
+% uninsured, and children poverty
+disp("Calculated Correlations:")
+disp(" Poor Health and Children Poverty (PH-CP):   "+PH_CP)
+disp("Some College and Children Poverty (SC-CP):   "+SC_CP)
+disp("   Uninsured and Children Poverty (UI-CP):   "+UI_CP)
+disp("******************************************************")

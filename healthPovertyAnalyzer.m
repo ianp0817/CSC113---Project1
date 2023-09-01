@@ -14,8 +14,14 @@ NC = readmatrix("NC_Health_2023.xlsx");
 WA = readmatrix("WA_Health_2023.xlsx");
 
 %% Switch Case
-% hard-coded for now, will fix later
-state = MS;
+
+% Prints user options
+disp("Pick a State to Analyze:")
+disp("(MS) Mississippi"+newline+"(NC) North Carolina"+newline+"(WA) Washington"+newline)
+
+% Grab user input and sets it as the state
+% Shortened to not use if statements by having user input state abbr.
+state = input("Selection: ");
 
 %% 2.3: Analyzing the Data and Printing
 % A: Calculate the Poor Health/Unemployment/HS Graduation rate
@@ -43,7 +49,7 @@ UI_CP = corrcoef(state(:,7), state(:,11));UI_CP = UI_CP(1,2);
 
 %% Display module
 
-
+disp(newline)
 disp("        Statistics:    Avg,    Min,  Max   ")
 disp("******************************************************")
 
